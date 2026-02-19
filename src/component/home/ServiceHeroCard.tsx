@@ -1,6 +1,7 @@
 // src/components/home/ServiceHeroCard.tsx
 import React from 'react';
 import { ArrowRight, LucideIcon } from 'lucide-react';
+import Link from 'next/link';
 
 interface ServiceHeroCardProps {
     title: string;
@@ -43,6 +44,7 @@ const ServiceHeroCard: React.FC<ServiceHeroCardProps> = ({ title, description, i
                 </div>
 
                 {/* RIGHT SIDE */}
+                <Link href="/services/custom-software">
                 <div className="w-full md:w-auto flex justify-start md:justify-end mt-4 md:mt-0">
                     <button className="group/btn relative lg:absolute flex items-center gap-4 pl-6 pr-6 py-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full hover:bg-gradient-to-r from-red-500 to-red-900 transition-all duration-300 cursor-pointer">
                         <div className="relative flex flex-col items-start">
@@ -56,6 +58,7 @@ const ServiceHeroCard: React.FC<ServiceHeroCardProps> = ({ title, description, i
                         </div>
                     </button>
                 </div>
+                </Link>
 
             </div>
         </div>

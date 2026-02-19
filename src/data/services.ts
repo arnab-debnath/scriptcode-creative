@@ -1,73 +1,114 @@
 // src/data/services.ts
-import { Globe, ShoppingBag, Code, Server, LucideIcon, Rocket, Megaphone, PenTool } from "lucide-react";
+import { 
+  Globe, Code2, Smartphone, Rocket, Search, ShieldCheck, 
+  Cpu, Layout, PenTool, CheckCircle, Eye, Terminal, Briefcase, BarChart 
+} from "lucide-react";
 
 export interface Service {
+    id: string;
     title: string;
     description: string;
-    // We limit this to exactly two types for the toggle logic
-    type: "premium" | "budget"; 
+    type: "engineering" | "creative-handoff" | "consulting"; 
     image: string;
-    icon: LucideIcon;
+    icon: any;
+    externalLink?: string;
 }
 
 export const services: Service[] = [
-    // --- PREMIUM SERVICES (High Tech, Custom) ---
+    // --- CORE ENGINEERING ---
     {
+        id: "custom-software",
         title: "Custom Software Development",
-        description: "Enterprise-grade web applications built with React, Node.js, and Python. Tailored exactly to your business logic.",
-        type: "premium",
-        image: "/services/custom-sw.png", // Make sure these images exist
-        icon: Code,
-    },
-    {
-        title: "SaaS Product Engineering",
-        description: "End-to-end development of scalable Software-as-a-Service platforms, from MVP to IPO-ready architecture.",
-        type: "premium",
-        image: "/services/product-marketing.png",
-        icon: Rocket,
-    },
-    {
-        title: "Enterprise Mobile Apps",
-        description: "High-performance native and cross-platform mobile applications for iOS and Android.",
-        type: "premium",
+        description: "Enterprise-grade architecture built with modern stacks (React, Node.js, Python). Specialized in solving complex business logic.",
+        type: "engineering",
         image: "/services/custom-sw.png",
-        icon: Server,
-    },
-
-    // --- BUDGET / ESSENTIALS (Marketing, CMS, Shopify) ---
-    {
-        title: "Shopify & E-Commerce",
-        description: "Rapidly deployed, high-converting stores using Shopify or WooCommerce templates.",
-        type: "budget",
-        image: "/services/shopify.png",
-        icon: ShoppingBag,
+        icon: Code2,
     },
     {
-        title: "WordPress & CMS",
-        description: "Beautiful, easy-to-manage websites perfect for portfolios, blogs, and small businesses.",
-        type: "budget",
-        image: "/services/wordpress.png",
+        id: "web-development",
+        title: "Web Development",
+        description: "High-performance, scalable web applications and progressive web apps (PWAs) engineered for speed and reliability.",
+        type: "engineering",
+        image: "/services/web-dev.png",
         icon: Globe,
     },
     {
-        title: "Digital Marketing",
-        description: "SEO, Social Media, and PPC campaigns designed to drive immediate traffic and leads.",
-        type: "budget",
-        image: "/services/digital-marketing.png",
-        icon: Megaphone,
+        id: "mobile-development",
+        title: "Mobile Development",
+        description: "Native and cross-platform mobile applications for iOS and Android built for seamless performance.",
+        type: "engineering",
+        image: "/services/wordpress.png",
+        icon: Smartphone,
     },
     {
-        title: "Branding & Identity",
-        description: "Logo design, color palettes, and brand guidelines to give your business a professional look.",
-        type: "budget",
+        id: "devops-as-a-service",
+        title: "DevOps as a Service",
+        description: "Automating deployment pipelines, cloud infrastructure management, and monitoring for 99.9% uptime.",
+        type: "engineering",
+        image: "/services/wordpress.png",
+        icon: Terminal,
+    },
+
+    // --- DESIGN & ACCESSIBILITY ---
+    {
+        id: "ui-ux-design",
+        title: "UI/UX Design",
+        description: "User-centric interface design and experience mapping to ensure your product is intuitive and engaging.",
+        type: "engineering",
+        image: "/services/wordpress.png",
+        icon: PenTool,
+    },
+    {
+        id: "web-accessibility",
+        title: "Web Accessibility",
+        description: "Ensuring your digital products are WCAG compliant and usable for everyone, regardless of ability.",
+        type: "engineering",
+        image: "/services/wordpress.png",
+        icon: Eye,
+    },
+
+    // --- QUALITY & STRATEGY ---
+    {
+        id: "quality-assurance",
+        title: "Quality Assurance",
+        description: "Rigorous manual and automated testing to ensure your software is bug-free and production-ready.",
+        type: "engineering",
         image: "/services/branding.png",
-        icon: PenTool,
+        icon: CheckCircle,
     },
     {
-        title: "Content Creation",
-        description: "Engaging copywriting and visuals to tell your brand's story effectively.",
-        type: "budget",
-        image: "/services/custom-sw.png",
-        icon: PenTool,
+        id: "code-audit",
+        title: "Code Audit",
+        description: "Deep-dive technical reviews of existing codebases to identify security risks and performance bottlenecks.",
+        type: "engineering",
+        image: "/services/product-marketing.png",
+        icon: ShieldCheck,
+    },
+    {
+        id: "it-consulting",
+        title: "IT Consulting",
+        description: "Strategic guidance on technology adoption, digital transformation, and technical roadmap planning.",
+        type: "consulting",
+        image: "/services/shopify.png",
+        icon: Briefcase,
+    },
+    {
+        id: "business-analysis",
+        title: "Business Analysis",
+        description: "Bridging the gap between business goals and technical execution through detailed requirement gathering.",
+        type: "consulting",
+        image: "/services/wordpress.png",
+        icon: BarChart,
+    },
+
+    // --- EXTERNAL HANDOFF ---
+   {
+        id: "digital-marketing",
+        title: "Digital Marketing",
+        description: "Scale your reach with our specialized creative division. Visit our Digital Agency for SEO, Social Media, and Ads.",
+        type: "creative-handoff",
+        image: "/services/digital-marketing.png",
+        icon: Search,
+        externalLink: "https://creative.scriptcode.in" 
     },
 ];

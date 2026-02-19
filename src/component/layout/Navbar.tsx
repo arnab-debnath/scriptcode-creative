@@ -1,11 +1,12 @@
-// src/components/layout/Navbar.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link"; // Changed from react-router-dom
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // <--- 1. Import this
 
 const Navbar: React.FC = () => {
+  const pathname = usePathname(); // <--- 2. Get current URL
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,12 +23,17 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // <--- 3. THE FIX: Hide this navbar if we are in the Creative Section
+  if (pathname?.startsWith("/creative")) {
+    return null;
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
       ${
         scrolled
-          ? "bg-transparent backdrop-blur-md shadow-md border-b border-white/10" 
+          ? "bg-[#1e1e1e]/20 backdrop-blur-md shadow-md border-b border-white/10" 
           : "bg-transparent backdrop-blur-sm" 
       }`}
     >
@@ -84,7 +90,7 @@ const Navbar: React.FC = () => {
       {open && (
         <div className="lg:hidden bg-[#071B23]/95 backdrop-blur-xl border-t border-gray-700 px-6 py-6 space-y-6 flex flex-col h-screen text-gray-300 absolute w-full top-full left-0">
           <Link
-            href="/"
+            href="/about"
             className="block text-white text-lg"
             onClick={() => setOpen(false)}
           >
@@ -118,10 +124,13 @@ const Navbar: React.FC = () => {
           >
             Portfolio
           </Link>
-
+          <Link href="/estimate"
+          onClick={() => setOpen(false)}
+          >
           <button className="w-full px-6 py-3 rounded-md bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium">
             Get Estimate
           </button>
+          </Link>
         </div>
       )}
     </header>
