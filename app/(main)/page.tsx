@@ -13,13 +13,21 @@ export default function Home() {
       {/* Navbar is already in layout.tsx, so we don't need it here */}
       
       <Hero />
-      <Marquee text="empower &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; innovate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; progress &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inspire &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •"  />
+      
+      <Marquee items={["Empower", "Innovate", "Transform", "Progress", "Inspire"]} />
+      
       <ServicesGrid />
-      <Marquee text="web development &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mobile apps &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ui/ux design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; custom software &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; digital marketing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •" />
+      
+      <Marquee items={["Web Development", "Mobile Apps", "UI/UX Design", "Custom Software", "Digital Marketing"]} />
+      
       <Transparency />
-      <Marquee text="transparency &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integrity &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; excellence &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; collaboration &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •" />
+      
+      <Marquee items={["Transparency", "Integrity", "Excellence", "Collaboration", "Precision"]} />
+      
       <IndustriesGrid />
-      <Marquee text="healthcare&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; education &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fintech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real estate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enterprise &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •" />
+      
+      <Marquee items={["Healthcare", "Education", "FinTech", "Real Estate", "Enterprise"]} />
+      
       <WhyChoose />
       
       <ContactSection />

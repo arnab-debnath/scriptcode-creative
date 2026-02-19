@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google"; // Or your preferred font
 import "./globals.css";
 import Navbar from "../src/component/layout/Navbar";
-import Footer from "../src/component/layout/Footer";
+import FooterWrapper from "../src/component/layout/FooterWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +24,7 @@ export default function RootLayout({
         <main className="min-h-screen bg-[#060b10]">
             {children}
         </main>
-        <Footer />
+        <FooterWrapper />
       </body>
     </html>
   );

@@ -148,7 +148,7 @@ export default function PortfolioPage() {
                 Looking for more?
             </h2>
             
-            <Link href="/contact">
+            <Link href="/estimate">
                 <button className="px-10 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] cursor-pointer">
                     Start a Project
                 </button>

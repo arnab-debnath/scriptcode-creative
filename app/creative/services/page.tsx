@@ -104,8 +104,8 @@ export default function CreativeServices() {
                     <p className="text-gray-400 text-lg leading-relaxed mb-8">
                         We don't guess. We follow a proven 3-step system to take your brand from unknown to unforgettable.
                     </p>
-                    <Link href="/contact">
-                        <button className="px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors">
+                    <Link href="/creative/contact">
+                        <button className="px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors cursor-pointer">
                             Start Your Project
                         </button>
                     </Link>

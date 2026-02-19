@@ -217,7 +217,7 @@ export default function ResourcesPage() {
         </p>
         <div className="flex justify-center gap-4">
             <Link href="/contact">
-                <button className="px-8 py-3 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors">
+                <button className="px-8 py-3 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors cursor-pointer">
                     Contact Support
                 </button>
             </Link>

@@ -17,7 +17,7 @@ const projects: any = {
     category: "Web Design",
     type: "WordPress & SEO",
     tagline: "Trust & Care: A Modern Medical Experience.",
-    heroImage: "/images/portfolio/medicore-hero.jpg",
+    heroImage: "/services/creative-project/medicorehealth.png",
     desc: "A modern, digital-first brand transformation for clinics focusing on accessibility.",
     stat: "1.2s Load"
   },
@@ -27,7 +27,7 @@ const projects: any = {
     category: "Branding",
     type: "Shopify Store",
     tagline: "Minimalist E-Commerce for Hype Culture.",
-    heroImage: "/images/portfolio/frenzy-hero.jpg",
+    heroImage: "/services/creative-project/frenzystreet.png",
     desc: "A bold 'Dark Mode' e-commerce store designed for high conversion.",
     stat: "Hype Design"
   },
@@ -37,7 +37,7 @@ const projects: any = {
     category: "Growth",
     type: "Social Media Strategy",
     tagline: "From 0 to 10k: The Viral Blueprint.",
-    heroImage: "/images/portfolio/social-hero.jpg",
+    heroImage: "/services/creative-project/techstart.png",
     desc: "Data-backed organic growth strategy using high-contrast typography.",
     stat: "+400% Reach"
   },

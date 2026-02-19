@@ -88,7 +88,7 @@ export default function ServiceClient() {
                             We specialize in <span className="text-white font-semibold">custom-engineered solutions</span> for unique business challenges. If you can dream it, we can code it.
                         </p>
                         <Link href="/contact">
-                            <button className="px-10 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center gap-2">
+                            <button className="px-10 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center gap-2 cursor-pointer">
                                 Talk to an Architect <ArrowRight size={20} />
                             </button>
                         </Link>

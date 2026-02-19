@@ -1,17 +1,15 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle, ArrowRight, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, MessageCircle, ArrowRight, Loader2, Code2 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-// 1. IMPORT EMAILJS
 import emailjs from '@emailjs/browser';
 
-// 1. FORM COMPONENT (Handles the logic)
+// 1. FORM COMPONENT
 function ContactForm() {
   const searchParams = useSearchParams();
   const plan = searchParams.get('plan');
   
-  // Form State
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +20,6 @@ function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Auto-fill the service based on URL
   useEffect(() => {
     if (plan) {
       setFormData(prev => ({ ...prev, service: decodeURIComponent(plan) }));
@@ -37,7 +34,6 @@ function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // 2. PREPARE DATA FOR EMAILJS
     const templateParams = {
         name: formData.name,
         email: formData.email,
@@ -47,27 +43,25 @@ function ContactForm() {
     };
 
     try {
-        // 3. SEND EMAIL
         await emailjs.send(
-            'service_paa3prc',                 // <--- YOUR SERVICE ID (Added)
-            'template_7la5mg7',     // <--- PASTE TEMPLATE ID HERE
+            'service_paa3prc',                 
+            'template_7la5mg7',     
             templateParams,
-            '2qlYhtRtoHlKTCyz9'       // <--- PASTE PUBLIC KEY HERE
+            '2qlYhtRtoHlKTCyz9'       
         );
-
-        // Success Message
-        alert(`Thank you ${formData.name}! Your message has been sent successfully.`);
-        
-        // Reset Form
+        alert(`Thank you ${formData.name}! Your message has been sent successfully. Our engineering team will review it shortly.`);
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-
     } catch (error) {
         console.error('FAILED...', error);
-        alert("Something went wrong. Please try again or message us on WhatsApp.");
+        alert("Something went wrong. Please try again or message us directly on WhatsApp.");
     } finally {
         setIsSubmitting(false);
     }
   };
+
+  // Shared input styling for that clean, SaaS decorum
+  const inputBaseStyle = "w-full bg-[#0D1117] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all peer placeholder-transparent";
+  const labelBaseStyle = "absolute left-4 top-4 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-400 bg-[#0D1117] px-1 pointer-events-none transform -translate-y-1/2 scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-90 peer-focus:-translate-y-6 rounded-sm";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -80,12 +74,10 @@ function ContactForm() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-[#0B1215] border border-white/10 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-cyan-400 transition-all peer"
-                    placeholder=" " 
+                    className={inputBaseStyle}
+                    placeholder="Your Name" 
                 />
-                <label className="absolute left-4 top-4 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-400 bg-[#0B1215] px-1 pointer-events-none transform -translate-y-1/2 scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-90 peer-focus:-translate-y-6">
-                    Your Name
-                </label>
+                <label className={labelBaseStyle}>Your Name</label>
             </div>
 
             {/* Phone */}
@@ -96,12 +88,10 @@ function ContactForm() {
                     required 
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-[#0B1215] border border-white/10 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-cyan-400 transition-all peer"
-                    placeholder=" " 
+                    className={inputBaseStyle}
+                    placeholder="Phone Number" 
                 />
-                <label className="absolute left-4 top-4 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-400 bg-[#0B1215] px-1 pointer-events-none transform -translate-y-1/2 scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-90 peer-focus:-translate-y-6">
-                    Phone Number
-                </label>
+                <label className={labelBaseStyle}>Phone Number</label>
             </div>
         </div>
 
@@ -113,37 +103,40 @@ function ContactForm() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-[#0B1215] border border-white/10 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-cyan-400 transition-all peer"
-                placeholder=" "
+                className={inputBaseStyle}
+                placeholder="Email Address"
             />
-            <label className="absolute left-4 top-4 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-400 bg-[#0B1215] px-1 pointer-events-none transform -translate-y-1/2 scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-90 peer-focus:-translate-y-6">
-                Email Address
-            </label>
+            <label className={labelBaseStyle}>Email Address</label>
         </div>
 
-        {/* Service Selection (Auto-filled) */}
+        {/* UPDATED: Engineering Service Categories */}
         <div className="relative group">
             <select 
                 name="service"
+                required
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full bg-[#0B1215] border border-white/10 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-cyan-400 appearance-none cursor-pointer"
+                className="w-full bg-[#0D1117] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 appearance-none cursor-pointer"
             >
-                <option value="" disabled>Select a Service</option>
-                <optgroup label="Monthly Retainers">
-                    <option value="Standard Care">Standard Care (₹15k)</option>
-                    <option value="Growth Partner">Growth Partner (₹35k)</option>
-                    <option value="Market Dominance">Market Dominance (₹75k)</option>
+                <option value="" disabled>Select Engineering Service</option>
+                <optgroup label="Development Solutions">
+                    <option value="Custom Software Development">Custom Software Development</option>
+                    <option value="Web Application Engineering">Web Application Engineering</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
+                    <option value="E-Commerce Architecture">E-Commerce Architecture</option>
                 </optgroup>
-                <optgroup label="Development">
-                    <option value="Landing Page">Landing Page Dev</option>
-                    <option value="Business Website">Business Website Dev</option>
-                    <option value="Custom Enterprise Solution">Custom Enterprise Solution</option>
+                <optgroup label="Infrastructure & Tech">
+                    <option value="DevOps & Cloud Migration">DevOps & Cloud Migration</option>
+                    <option value="API Development & Integration">API Development & Integration</option>
+                    <option value="AI & Machine Learning">AI & Machine Learning</option>
                 </optgroup>
-                <option value="Hourly Consultation">Hourly Consultation</option>
-                <option value="Other">Other Inquiry</option>
+                <optgroup label="Advisory">
+                    <option value="IT Consulting & Strategy">IT Consulting & Strategy</option>
+                    <option value="System Architecture Audit">System Architecture Audit</option>
+                </optgroup>
+                <option value="Other">Other Technical Inquiry</option>
             </select>
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 group-hover:text-cyan-400 transition-colors">
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                 ▼
             </div>
         </div>
@@ -152,29 +145,28 @@ function ContactForm() {
         <div className="relative group">
             <textarea 
                 name="message" 
-                rows={4}
+                rows={5}
+                required
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-[#0B1215] border border-white/10 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-transparent peer resize-none"
-                placeholder=" "
+                className={`${inputBaseStyle} resize-none`}
+                placeholder="Project Details"
             ></textarea>
-            <label className="absolute left-4 top-4 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-400 bg-[#0B1215] px-1 pointer-events-none transform -translate-y-1/2 scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-90 peer-focus:-translate-y-6">
-                Tell us about your project...
-            </label>
+            <label className={labelBaseStyle}>Project Details & Requirements...</label>
         </div>
 
         <button 
             type="submit" 
             disabled={isSubmitting}
-            className="w-full bg-white text-black font-bold py-4 rounded-lg hover:bg-cyan-400 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.2)] hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
         >
             {isSubmitting ? (
                 <>
-                    <Loader2 className="animate-spin" size={18} /> Sending...
+                    <Loader2 className="animate-spin" size={18} /> Sending Details...
                 </>
             ) : (
                 <>
-                    Send Message <Send size={18} />
+                    Submit Inquiry <Send size={18} />
                 </>
             )}
         </button>
@@ -182,74 +174,70 @@ function ContactForm() {
   );
 }
 
-// 2. MAIN PAGE COMPONENT (The Layout)
+// 2. MAIN PAGE COMPONENT
 export default function ContactPage() {
   return (
-    <div className="bg-[#010506] text-white min-h-screen pt-32 pb-20 px-6 overflow-hidden">
+    <div className="bg-[#02040A] text-white min-h-screen pt-32 pb-24 px-6 overflow-hidden relative">
       
-      {/* Background Decor */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
-          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full"></div>
-          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full"></div>
-      </div>
+      {/* Refined Technical Background Decor */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-900/10 blur-[150px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-900/10 blur-[150px] rounded-full pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-start">
         
-        {/* LEFT COLUMN: Info & Socials */}
-        <div className="animate-fade-in-left space-y-10">
+        {/* LEFT COLUMN: Info */}
+        <div className="lg:col-span-5 space-y-10">
             <div>
-                <p className="text-cyan-400 font-bold uppercase tracking-widest mb-4">Contact Us</p>
-                <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                    Let's Build <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
-                        Something Great.
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-6">
+                    <Code2 size={16} /> Engineering Solutions
+                </div>
+                <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">
+                    Architect Your <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                        Next Advantage.
                     </span>
                 </h1>
-                <p className="text-gray-400 text-lg leading-relaxed max-w-lg">
-                    Whether you have a specific project in mind or just want to explore what's possible, we're ready to listen.
+                <p className="text-gray-400 text-lg leading-relaxed">
+                    Ready to build scalable, high-performance software? Share your project requirements with our engineering team, and we'll help you map out the perfect architecture.
                 </p>
             </div>
 
-            {/* Direct Contact Cards */}
+            {/* Direct Contact Cards - Cleaner UI */}
             <div className="space-y-4">
-                <a href="mailto:hello@scriptcode.com" className="flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all group cursor-pointer">
-                    <div className="p-4 bg-blue-500/20 rounded-full text-blue-400 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                        <Mail size={24} />
+                <a href="mailto:scriptcode.innovation@gmail.com" className="flex items-center gap-5 p-5 rounded-2xl bg-[#0D1117] border border-white/5 hover:border-blue-500/30 transition-all group cursor-pointer">
+                    <div className="p-3 bg-white/5 rounded-xl text-gray-400 group-hover:text-blue-400 group-hover:bg-blue-500/10 transition-all">
+                        <Mail size={22} />
                     </div>
                     <div>
-                        <p className="text-sm text-gray-400 mb-1">Email Us</p>
-                        <p className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">scriptcode.innovation@gmail.com</p>
+                        <p className="text-sm text-gray-500 font-medium mb-1">Email Our Team</p>
+                        <p className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">scriptcode.innovation@gmail.com</p>
                     </div>
-                    <ArrowRight className="ml-auto text-gray-600 group-hover:text-white transition-colors opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 duration-300" />
                 </a>
 
-                <a href="https://wa.me/918100300910" target="_blank" className="flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-green-500/10 hover:border-green-500/30 transition-all group cursor-pointer">
-                    <div className="p-4 bg-green-500/20 rounded-full text-green-400 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
-                        <MessageCircle size={24} />
+                <a href="https://wa.me/918100300910" target="_blank" className="flex items-center gap-5 p-5 rounded-2xl bg-[#0D1117] border border-white/5 hover:border-green-500/30 transition-all group cursor-pointer">
+                    <div className="p-3 bg-white/5 rounded-xl text-gray-400 group-hover:text-green-400 group-hover:bg-green-500/10 transition-all">
+                        <MessageCircle size={22} />
                     </div>
                     <div>
-                        <p className="text-sm text-gray-400 mb-1">WhatsApp (Fastest)</p>
-                        <p className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">+91 8100 300 910</p>
+                        <p className="text-sm text-gray-500 font-medium mb-1">Direct WhatsApp (Fastest)</p>
+                        <p className="text-lg font-bold text-white group-hover:text-green-400 transition-colors">+91 8100 300 910</p>
                     </div>
-                    <ArrowRight className="ml-auto text-gray-600 group-hover:text-white transition-colors opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 duration-300" />
                 </a>
             </div>
 
-            <div className="flex items-center gap-3 text-gray-500 text-sm border-t border-white/10 pt-8 mt-8">
-                <MapPin size={18} className="text-purple-500" />
-                <span>Based in India, Serving Clients Globally.</span>
+            <div className="flex items-center gap-3 text-gray-500 text-sm pt-4">
+                <MapPin size={18} className="text-blue-500" />
+                <span>Based in India, Engineering Globally.</span>
             </div>
         </div>
 
         {/* RIGHT COLUMN: The Form */}
-        <div className="bg-[#060b10]/80 backdrop-blur-xl p-8 md:p-10 rounded-3xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] animate-fade-in-right relative overflow-hidden">
-            {/* Form Glow Effect */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none"></div>
-            
+        <div className="lg:col-span-7 bg-[#050810] p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl relative">
+            <h3 className="text-2xl font-bold mb-8 text-white">Project Inquiry</h3>
             <Suspense fallback={
                 <div className="h-96 flex items-center justify-center text-gray-500 flex-col gap-4">
-                    <Loader2 className="animate-spin text-cyan-400" size={32} />
-                    <p>Loading form...</p>
+                    <Loader2 className="animate-spin text-blue-500" size={32} />
+                    <p>Loading secure form...</p>
                 </div>
             }>
                 <ContactForm />
