@@ -8,7 +8,7 @@ export default function FooterWrapper() {
   const pathname = usePathname();
 
   // Hide the engineering footer on BOTH the creative site and the demo sites
-  if (pathname?.startsWith('/creative') || pathname?.startsWith('/demos')) {
+  if (pathname?.startsWith('/creative') || pathname?.startsWith('/portfolio-demos')) {
     return null;
   }
 
