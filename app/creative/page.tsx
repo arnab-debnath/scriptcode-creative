@@ -34,7 +34,7 @@ export default function CreativeHome() {
     },
     {
         question: "Do you work with early-stage startups?",
-        answer: "Yes, but we are selective. We partner with brands that have a proven product-market fit and are ready to pour fuel on the fire. If you are still figuring out what you sell, we aren't the right fit yet."
+        answer: "Yes, but we are selective. We partner with brands that have a proven product-market fit and are ready to pour fuel on the fire. If you are still figuring out what you sell, aren&apos;t the right fit yet."
     },
     {
         question: "Are there long-term lock-in contracts?",
@@ -98,7 +98,7 @@ export default function CreativeHome() {
                 
                 {/* FLUID TEXT: Drop base size to text-base for mobile */}
                 <motion.p variants={fadeUp} className="text-base sm:text-lg md:text-xl xl:text-2xl text-gray-400 mb-8 md:mb-10 max-w-xl leading-relaxed font-medium">
-                    We don't just run ads. We engineer aggressive growth systems that turn traffic into disproportionate revenue.
+                    We don&apos;t just run ads. We engineer aggressive growth systems that turn traffic into disproportionate revenue.
                 </motion.p>
 
                 <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-stretch sm:items-center w-full sm:w-auto">
@@ -205,7 +205,7 @@ export default function CreativeHome() {
                     <span className="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-4 md:mb-6 block leading-none opacity-80">/ 01</span>
                     <h3 className="text-2xl md:text-5xl font-black mb-4 md:mb-6 text-white leading-tight uppercase tracking-tight">The Blueprint.</h3>
                     <p className="text-gray-400 text-base md:text-xl leading-relaxed font-medium">
-                        We analyze your market, dissect your competitors, and build a bespoke multi-channel strategy. Whether it's SEO, paid social, or email marketing, we map out the exact blueprint to hit your revenue targets.
+                        We analyze your market, dissect your competitors, and build a bespoke multi-channel strategy. Whether it&apos;s SEO, paid social, or email marketing, we map out the exact blueprint to hit your revenue targets.
                     </p>
                 </motion.div>
 

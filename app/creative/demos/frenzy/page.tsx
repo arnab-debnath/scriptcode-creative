@@ -67,7 +67,7 @@ export default function FrenzyDemo() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 bg-[#FF5F00]/10 text-[#FF5F00] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 border border-[#FF5F00]/20">
-              <Flame size={12} /> Winter '26 Collection
+              <Flame size={12} /> Winter &apos;26 Collection
             </div>
             <h1 className="text-6xl md:text-[7rem] font-black leading-[0.85] tracking-tighter uppercase mb-8">
               Chaos <br />

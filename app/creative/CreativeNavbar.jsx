@@ -128,7 +128,7 @@ export default function CreativeNavbar() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/10 blur-[100px] rounded-full pointer-events-none"></div>
 
             {/* LAYOUT FIX: pt-28 (112px) ensures it completely clears the 80px navbar */}
-            <div className="flex flex-col justify-center items-center min-h-screen pt-28 pb-12 px-6 relative z-10 w-full">
+            <div className="flex flex-col justify-start items-center min-h-screen pt-32 pb-12 px-6 relative z-10 w-full h-full overflow-y-auto">
                 <div className="flex flex-col space-y-6 sm:space-y-8 text-center w-full max-w-sm mx-auto">
                     {/* TYPOGRAPHY FIX: Scaled to 3xl on small phones, 4xl on larger phones */}
                     <Link href="/creative/about" onClick={() => setIsOpen(false)} className="text-3xl sm:text-4xl font-black text-white hover:text-amber-400 transition-colors uppercase tracking-tighter">Agency</Link>
