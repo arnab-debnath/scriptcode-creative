@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Rocket, Target, Zap, 
   ArrowRight, Heart, Globe, Code, Server, Layout 
@@ -19,10 +20,12 @@ export default function CreativeAbout() {
          {/* --- CUSTOM BADGE WITH SHORT LOGO --- */}
          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-300 text-xs font-bold mb-8 uppercase tracking-widest relative z-10">
             {/* The Custom Short Logo */}
-            <img 
+            <Image 
                 src="/images/scshortlogo.png" 
                 alt="ScriptCode Mark" 
-                className="w-5 h-5 object-contain brightness-0 invert" 
+                width={20} // Replaces w-5
+                height={20} // Replaces h-5
+                className="object-contain brightness-0 invert" 
             />
             <span>The New Standard</span>
          </div>

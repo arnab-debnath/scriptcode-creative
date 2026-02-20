@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Image from 'next/image';
 import { 
   Mail, Phone, Send, MessageCircle, 
   Sparkles, Loader2, ShieldCheck, Zap,
@@ -62,7 +63,13 @@ export default function CreativeContact() {
       {/* HEADER SECTION */}
       <div className="max-w-4xl mx-auto text-center mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-bold mb-6 uppercase tracking-widest">
-          <img src="/images/scshortlogo.png" alt="ScriptCode" className='h-3 brightness-0 invert' /> Start Your Success Story
+          <Image 
+              src="/images/scshortlogo.png" 
+              alt="ScriptCode" 
+              width={12} 
+              height={12} 
+              className="h-3 w-auto brightness-0 invert" 
+          /> Start Your Success Story
         </div>
         <h1 className="text-4xl md:text-7xl font-black mb-6 leading-tight">
           Let’s Build Your <br />

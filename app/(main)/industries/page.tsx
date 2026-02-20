@@ -6,8 +6,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Industries | ScriptCode',
-  description: 'Software solutions for Healthcare, Education, Fintech, and more.',
+  title: 'Industry-Specific Software Solutions',
+  description: 'Discover how ScriptCode Innovation engineers specialized software, applications, and digital platforms for Healthcare, FinTech, Education, Real Estate, and more.',
+  keywords: ['industry software solutions', 'healthcare app development', 'fintech software engineering', 'enterprise software development', 'B2B software solutions'],
 };
 
 export default function IndustriesPage() {

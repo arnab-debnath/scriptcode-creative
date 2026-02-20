@@ -5,8 +5,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us | ScriptCode',
-  description: 'Building the future of digital innovation.',
+  title: 'About Our Engineering Team',
+  description: 'ScriptCode is a global collective of senior software engineers and architects. We use agile methodologies to build custom, high-performance digital solutions.',
+  keywords: ['software development company', 'agile development team', 'enterprise IT consulting', 'tech stack', 'custom web applications', 'dedicated development team'],
 };
 
 export default function AboutPage() {

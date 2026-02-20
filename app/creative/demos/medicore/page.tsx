@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import BackToLab from '../../components/BackToLab';
 import { 
   Phone, Clock, MapPin, ShieldCheck, 
@@ -72,12 +73,12 @@ export default function MediCoreDemo() {
                     </button>
                 </div>
 
-                {/* Trust Badges */}
+                {/* Trust Badges - UPDATED TO CSS MONOGRAMS */}
                 <div className="mt-12 flex items-center gap-6">
                     <div className="flex -space-x-3">
-                        {[1,2,3,4].map(i => (
-                            <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-slate-200 overflow-hidden">
-                                <img src={`https://i.pravatar.cc/150?u=${i}`} alt="user" />
+                        {['SJ', 'AL', 'MR', 'DK'].map((initials, i) => (
+                            <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-blue-100 text-blue-700 font-bold text-sm flex items-center justify-center overflow-hidden">
+                                {initials}
                             </div>
                         ))}
                     </div>
@@ -90,11 +91,15 @@ export default function MediCoreDemo() {
 
             {/* Hero Image Mockup Area */}
             <div className="relative">
-                <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-8 border-white">
-                    <img 
-                        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000" 
+                {/* UPDATED: Added aspect-[4/3] to contain the fill Image properly */}
+                <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-8 border-white">
+                    <Image 
+                        src="/services/creative-project/health/hero.jpg" 
                         alt="Modern Clinic" 
-                        className="w-full h-auto"
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
                     />
                 </div>
                 {/* Floating Card 1 */}
@@ -164,6 +169,10 @@ export default function MediCoreDemo() {
             <span className="font-bold">Book via WhatsApp</span>
         </Link>
       </div>
+
+      <footer className="py-20 border-t border-white/5 text-center text-gray-200 text-[10px] bg-blue-600 font-black uppercase tracking-[0.5em]">
+        © 2026 ScriptCode Creative • Health Care
+      </footer>
 
     </div>
   );

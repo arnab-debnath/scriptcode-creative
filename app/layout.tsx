@@ -1,15 +1,20 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Or your preferred font
+import { Inter } from "next/font/google"; 
 import "./globals.css";
-import Navbar from "../src/component/layout/Navbar";
+import NavbarWrapper from "../src/component/layout/NavbarWrapper"; // <-- UPDATED THIS
 import FooterWrapper from "../src/component/layout/FooterWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// --- UPDATED SEO METADATA ---
 export const metadata: Metadata = {
-  title: "ScriptCode - Transforming Ideas into Digital Success",
-  description: "Your partner in Digital Innovation. Web Development, App Design, and Marketing.",
+  title: {
+    default: "ScriptCode Innovation | High-Performance Software Engineering",
+    template: "%s | ScriptCode Innovation" 
+  },
+  description: "Architecting scalable, high-performance software for modern enterprises. Custom web, mobile, and cloud development.",
+  keywords: ["software engineering", "custom software", "web development", "tech agency India", "cloud migration", "IT consulting"],
 };
 
 export default function RootLayout({
@@ -20,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <NavbarWrapper /> {/* <-- UPDATED THIS */}
         <main className="min-h-screen bg-[#060b10]">
             {children}
         </main>

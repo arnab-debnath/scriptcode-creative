@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import BackToLab from '../../components/BackToLab';
+import Image from 'next/image';
 import { 
   ShoppingBag, Zap, Flame, ArrowRight, 
   Instagram, Twitter, Menu, X, Star, Clock
@@ -87,10 +88,14 @@ export default function FrenzyDemo() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-[#FF5F00]/20 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
             <div className="relative aspect-[4/5] bg-zinc-900 border border-white/5 overflow-hidden">
-               <img 
-                 src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=1000" 
+               {/* UPDATED: Next.js Image component with priority */}
+               <Image 
+                 src="/services/creative-project/frenzy/hoodie.jpg" 
                  alt="Streetwear Hero" 
-                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                 fill
+                 priority
+                 sizes="(max-width: 768px) 100vw, 50vw"
+                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
                />
                <div className="absolute bottom-6 left-6 right-6 p-6 bg-black/60 backdrop-blur-md border border-white/10">
                  <div className="flex justify-between items-end">
@@ -136,13 +141,20 @@ export default function FrenzyDemo() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Stealth Cargo", price: "₹3,999", img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800" },
-              { name: "Frenzy Signature Tee", price: "₹1,999", img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800" },
-              { name: "Urban Tech Jacket", price: "₹6,499", img: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800" },
+              { name: "Stealth Cargo", price: "₹3,999", img: "/services/creative-project/frenzy/cargo.webp" },
+              { name: "Frenzy Signature Tee", price: "₹1,999", img: "/services/creative-project/frenzy/tees.jpg" },
+              { name: "Urban Tech Jacket", price: "₹6,499", img: "/services/creative-project/frenzy/jacket.jpg" },
             ].map((p, idx) => (
               <div key={idx} className="group cursor-pointer">
                 <div className="aspect-[3/4] overflow-hidden bg-zinc-900 mb-6 relative">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                  {/* UPDATED: Next.js Image component for grid items */}
+                  <Image 
+                    src={p.img} 
+                    alt={p.name} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" 
+                  />
                   <button className="absolute bottom-0 left-0 right-0 py-4 bg-[#FF5F00] text-black font-black uppercase text-sm translate-y-full group-hover:translate-y-0 transition-transform">Add to Cart</button>
                 </div>
                 <div className="flex justify-between items-start">

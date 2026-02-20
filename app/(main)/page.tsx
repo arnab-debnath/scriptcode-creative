@@ -1,4 +1,13 @@
 // src/app/page.tsx
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Enterprise Software Engineering & Digital Transformation',
+  description: 'ScriptCode Innovation architects scalable, high-performance software, web applications, and cloud infrastructure for game-changing enterprises and modern businesses.',
+  keywords: ['software development company India', 'custom enterprise software', 'web application engineering', 'IT consulting firm', 'cloud architecture'],
+};
+
+// src/app/page.tsx
 import Hero from "../../src/component/home/Hero";
 import Marquee from "../../src/component/home/Marquee";
 import ServicesGrid from "../../src/component/home/ServiceGrid";

@@ -7,8 +7,8 @@ import Footer from './Footer'; // Import your Engineering Footer
 export default function FooterWrapper() {
   const pathname = usePathname();
 
-  // If the user is on the creative site, return nothing (hide the engineering footer)
-  if (pathname?.startsWith('/creative')) {
+  // Hide the engineering footer on BOTH the creative site and the demo sites
+  if (pathname?.startsWith('/creative') || pathname?.startsWith('/demos')) {
     return null;
   }
 

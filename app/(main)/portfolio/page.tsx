@@ -1,6 +1,7 @@
 // src/app/portfolio/page.tsx
 "use client";
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { projects } from "../../../src/data/portfolio";
 import { ArrowUpRight } from 'lucide-react';
@@ -52,7 +53,7 @@ export default function PortfolioPage() {
           <Link key={project.id}
                 href={project.link || "#"} 
                 target={project.link ? "_blank" : "_self"}
-                rel="nooopenr noreferrer"
+                rel="noopener noreferrer"
                 
                 className="block group relative w-full"
             >
@@ -65,13 +66,15 @@ export default function PortfolioPage() {
                   
                   {/* BACKGROUND IMAGE */}
                   <div className="absolute inset-0 w-full h-full bg-[#060b10]">
-                     {/* Use your real images here. 
-                        Added 'group-hover:scale-110' for the zoom effect you asked for.
+                     {/* UPDATED: Added 'fill' and 'sizes' which are required for responsive Next Images 
+                       without explicit width/height.
                      */}
-                     <img 
+                     <Image 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-700 ease-in-out"
+                        fill
+                        sizes="100vw"
+                        className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-700 ease-in-out"
                         style={{ backgroundColor: '#0B1215' }} // Fallback color if image missing
                      />
                      
@@ -126,17 +129,18 @@ export default function PortfolioPage() {
 
       </section>
 
-      {/* 3. BOTTOM CTA */}
       {/* 3. BOTTOM CTA WITH BACKGROUND */}
       <section className="relative py-40  flex flex-col items-center justify-center overflow-hidden mt-20">
         
         {/* A. BACKGROUND IMAGE */}
         <div className="absolute inset-0 z-0">
-            <img 
-                // You can change this to a local image like "/images/cta-bg.jpg"
+            {/* UPDATED: Converted to Next.js Image component */}
+            <Image 
                 src="/portfolio/ctabutton1.jpg" 
                 alt="Workspace background"
-                className="w-full h-full object-cover opacity-50 -skew-y-3"
+                fill
+                sizes="100vw"
+                className="object-cover opacity-50 -skew-y-3"
             />
             {/* Dark Gradient Overlay (Crucial for text readability) */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#010506] via-[#010506]/20 to-[#010506]/30"></div>

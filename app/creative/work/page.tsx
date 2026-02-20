@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ArrowRight, Smartphone, Layout, PenTool, 
   TrendingUp, Lock 
@@ -137,10 +138,15 @@ export default function CreativeWork() {
                       className="block h-full"
                     >
                         <div className="h-64 overflow-hidden relative">
-                            <img 
+                            <Image 
                                 src={project.heroImage} 
                                 alt={project.title} 
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                                fill // Required if you don't define exact width/height
+                                priority // Important for hero images to load faster (LCP)
+                                // "vh" is not valid in sizes. Use vw or media queries. 
+                                // This tells the browser: "On mobile occupy 100% width, on tablet 50%, on desktop 33%"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                             />
                             {project.stat && (
                                 <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">

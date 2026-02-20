@@ -1,14 +1,13 @@
 // src/app/services/page.tsx
 import type { Metadata } from 'next';
-import ServicesClient from './ServiceClient'; // Import the client component
+import ServicesClient from './ServiceClient'; 
 
-// 1. NOW THIS WORKS (Because this file is a Server Component)
 export const metadata: Metadata = {
-  title: 'Services | ScriptCode',
-  description: 'Choose between Premium Custom Development or Fast-Growth Budget Solutions.',
+  title: 'Enterprise Software & Web App Engineering',
+  description: 'ScriptCode Innovation engineers high-performance web applications, custom enterprise software, and scalable cloud architecture for businesses demanding technical excellence.',
+  keywords: ['enterprise software development', 'high-performance web apps', 'custom software engineering', 'scalable cloud architecture', 'full-stack development'],
 };
 
-// 2. This component just renders the client part
 export default function ServicesPage() {
   return <ServicesClient />;
 }

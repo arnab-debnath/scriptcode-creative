@@ -20,7 +20,7 @@ export const projects: Project[] = [
     description: "High-frequency trading platform with real-time data.",
     techStack: ["Next.js", "Python", "WebSockets"],
     status: "In Development",
-    link: "#"
+    link: "/demos/fintech"
   },
   {
     id: "2",
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description: "Luxury streetwear label identity.",
     techStack: ["Shopify", "React", "Framer"],
     status: "Concept",
-    link: "#"
+    link: "/demos/ecommerce"
   },
   {
     id: "3",
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     description: "Telemedicine platform for secure video consults.",
     techStack: ["React Native", "Node.js"],
     status: "Concept",
-    link: "#"
+    link: "/demos/healthcare"
   },
   {
     id: "4",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     description: "Portfolio for a futuristic architecture firm.",
     techStack: ["Three.js", "WebGL", "Vue"],
     status: "Completed",
-    link: "#"
+    link: "/demos/architecture"
   },
   {
     id: "5",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     description: "Corporate banking portal redesign.",
     techStack: ["Angular", "Java", "AWS"],
     status: "Completed",
-    link: "#"
+    link: "/demos/banking"
   },
   {
     id: "6",
@@ -70,6 +70,6 @@ export const projects: Project[] = [
     description: "Game launch landing page.",
     techStack: ["GSAP", "HTML5", "CSS"],
     status: "Concept",
-    link: "#"
+    link: "/demos/cyberpunk"
   },
 ];

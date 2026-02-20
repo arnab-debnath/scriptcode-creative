@@ -1,8 +1,23 @@
+"use client"; // Required for usePathname
+
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { ArrowRight, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 export default function CreativeFooter() {
+  const pathname = usePathname();
+
+  // 1. Check if the current URL contains '/demos'
+  const isDemoPage = pathname?.includes('/demos');
+
+  // 2. If it is a demo page, hide this footer entirely
+  if (isDemoPage) {
+    return null;
+  }
+
+  // 3. Otherwise, render the normal Creative Footer
   return (
     <footer className="bg-[#030305] border-t border-white/5 pt-32 pb-10 text-white relative overflow-hidden font-sans">
       
@@ -15,14 +30,16 @@ export default function CreativeFooter() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Top CTA Section WITH PURE PNG LOGO */}
+        {/* Top CTA Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 border-b border-white/10 pb-16 gap-8">
             <div>
-                {/* --- FULL PNG LOGO ADDED HERE --- */}
+                {/* --- OPTIMIZED NEXT.JS IMAGE LOGO --- */}
                 <Link href="/creative" className="inline-block mb-10 group">
-                    <img 
+                    <Image 
                         src="/images/scriptcodelogo.png" 
                         alt="ScriptCode Creative Logo" 
+                        width={160}
+                        height={40}
                         className="h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" 
                     />
                 </Link>
@@ -86,9 +103,12 @@ export default function CreativeFooter() {
           <div className="flex items-center gap-2">
               <span>© {new Date().getFullYear()}</span>
               <Link href="/creative" className="flex items-center gap-1.5 group">
-                  <img 
+                  {/* --- OPTIMIZED NEXT.JS IMAGE LOGO --- */}
+                  <Image 
                       src="/images/scriptcodelogo.png" 
                       alt="ScriptCode Logo" 
+                      width={60}
+                      height={14}
                       className="h-3.5 w-auto object-contain brightness-0 invert opacity-50 group-hover:opacity-100 transition-opacity" 
                   />
                   <span className="opacity-70 group-hover:opacity-100 group-hover:text-amber-400 transition-all">.Creative</span>

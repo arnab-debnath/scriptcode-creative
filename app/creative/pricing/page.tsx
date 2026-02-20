@@ -6,6 +6,8 @@ import {
   ArrowRight, Sparkles, Globe, ShoppingCart, Smartphone, RefreshCw, Layout, Zap 
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { vh } from 'framer-motion';
 
 // ==========================================
 // DATA: ONE-TIME PROJECTS (Development)
@@ -286,10 +288,12 @@ export default function CreativePricing() {
       {/* 1. HEADER & MAIN TOGGLE */}
       <div className="text-center mb-12 max-w-4xl mx-auto">
          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-bold mb-6 uppercase tracking-widest">
-            <img 
+            <Image 
                 src="/images/scshortlogo.png" 
                 alt="ScriptCode Mark" 
-                className="w-4 h-4 object-contain brightness-0 invert" 
+                width={16}
+                height={16}
+                className=" object-contain brightness-0 invert" 
             /> Transparent Pricing
          </div>
          <h1 className="text-4xl md:text-6xl font-black mb-6">

@@ -4,6 +4,13 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { Mail, MapPin, Send, MessageCircle, ArrowRight, Loader2, Code2 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import emailjs from '@emailjs/browser';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Our Engineering Team',
+  description: 'Ready to build scalable, high-performance software? Share your project requirements with our engineering team. Based in India, engineering globally.',
+  keywords: ['contact software agency', 'hire software engineers India', 'custom software development inquiry', 'IT consulting contact', 'enterprise software developers'],
+};
 
 // 1. FORM COMPONENT
 function ContactForm() {
