@@ -11,21 +11,21 @@ const projects = [
     name: "The Obsidian Spire", 
     location: "Neo-Tokyo", 
     year: "2028", 
-    image: "/portfolio/arch.jpg" 
+    image: "/portfolio/demo/image1.jpg" 
   },
   { 
     id: "02", 
     name: "Aero-Garden Phase III", 
     location: "Singapore", 
     year: "2027", 
-    image: "/portfolio/health.jpg" 
+    image: "/portfolio/demo/image2.jpg" 
   },
   { 
     id: "03", 
     name: "Quantum Data Center", 
     location: "Reykjavik", 
     year: "2029", 
-    image: "/portfolio/fintech.jpg" 
+    image: "/portfolio/demo/image3.jpg" 
   },
 ];
 
