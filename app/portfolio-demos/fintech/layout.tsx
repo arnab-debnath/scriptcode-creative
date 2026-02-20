@@ -20,8 +20,8 @@ export default function NovaTradeLayout({ children }: { children: React.ReactNod
   }, [pathname]);
 
   const navLinks = [
-    { name: 'Live Terminal', icon: Activity, path: '/demos/fintech' },
-    { name: 'Ledger', icon: LineChart, path: '/demos/fintech/ledger' },
+    { name: 'Live Terminal', icon: Activity, path: '/portfolio-demos/fintech' },
+    { name: 'Ledger', icon: LineChart, path: '/portfolio-demos/fintech/ledger' },
     { name: 'AI Insights', icon: Zap, path: '#' },
     { name: 'Wallets', icon: Wallet, path: '#' },
     { name: 'Settings', icon: Settings, path: '#' },

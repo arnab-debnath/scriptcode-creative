@@ -16,8 +16,8 @@ export default function NeonArchitectLayout({ children }: { children: React.Reac
   }, [pathname]);
 
   const navLinks = [
-    { name: 'Index', path: '/demos/architecture' },
-    { name: 'Archive', path: '/demos/architecture/archive' },
+    { name: 'Index', path: '/portfolio-demos/architecture' },
+    { name: 'Archive', path: '/portfolio-demos/architecture/archive' },
     { name: 'Studio', path: '#' },
   ];
 
@@ -58,7 +58,7 @@ export default function NeonArchitectLayout({ children }: { children: React.Reac
 
       {/* Floating Minimalist Header */}
       <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-8 flex justify-between items-center mix-blend-difference">
-        <Link href="/demos/architecture" className="text-xl font-black tracking-[0.3em] uppercase z-50 relative">
+        <Link href="/portfolio-demos/architecture" className="text-xl font-black tracking-[0.3em] uppercase z-50 relative">
           Neon<span className="text-transparent text-stroke-white text-stroke-1 ml-2">Arch</span>
         </Link>
 

@@ -21,10 +21,10 @@ export default function VitalityHealthLayout({ children }: { children: React.Rea
 
 
   const navLinks = [
-    { name: 'Patient Dashboard', icon: HeartPulse, path: '/demos/healthcare' },
+    { name: 'Patient Dashboard', icon: HeartPulse, path: '/portfolio-demos/healthcare' },
     { name: 'Appointments', icon: Calendar, path: '#' },
     { name: 'Video Consult', icon: Video, path: '#' },
-    { name: 'Medical Records', icon: ClipboardList, path: '/demos/healthcare/records' }, // <-- UPDATE THIS LINE
+    { name: 'Medical Records', icon: ClipboardList, path: '/portfolio-demos/healthcare/records' }, // <-- UPDATE THIS LINE
     { name: 'Secure Messages', icon: MessageSquare, path: '#' },
   ];
   return (

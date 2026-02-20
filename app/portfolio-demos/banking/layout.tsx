@@ -14,8 +14,8 @@ export default function ZenithBankLayout({ children }: { children: React.ReactNo
   const pathname = usePathname();
 
   const mainNav = [
-    { name: 'Accounts Overview', path: '/demos/banking' },
-    { name: 'Wire Transfers & ACH', path: '/demos/banking/transfers' },
+    { name: 'Accounts Overview', path: '/portfolio-demos/banking' },
+    { name: 'Wire Transfers & ACH', path: '/portfolio-demos/banking/transfers' },
     { name: 'Commercial Cards', path: '#' },
     { name: 'Statements & Reports', path: '#' },
     { name: 'Administration', path: '#' },

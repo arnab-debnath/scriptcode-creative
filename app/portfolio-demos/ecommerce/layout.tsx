@@ -19,8 +19,8 @@ export default function AuraEcommerceLayout({ children }: { children: React.Reac
 
   
   const navLinks = [
-    { name: 'Storefront Overview', icon: BarChart, path: '/demos/ecommerce' },
-    { name: 'Orders', icon: ShoppingBag, path: '/demos/ecommerce/orders' }, // <-- UPDATE THIS LINE
+    { name: 'Storefront Overview', icon: BarChart, path: '/portfolio-demos/ecommerce' },
+    { name: 'Orders', icon: ShoppingBag, path: '/portfolio-demos/ecommerce/orders' }, // <-- UPDATE THIS LINE
     { name: 'Products', icon: Tag, path: '#' },
     { name: 'Customers', icon: Users, path: '#' },
     { name: 'Inventory', icon: Box, path: '#' },

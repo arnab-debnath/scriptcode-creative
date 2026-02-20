@@ -22,7 +22,7 @@ export default function CyberpunkLayout({ children }: { children: React.ReactNod
       <nav className="fixed w-full z-50 top-0 flex justify-between items-center px-6 md:px-12 py-6 bg-gradient-to-b from-black/90 via-black/50 to-transparent backdrop-blur-[2px]">
         
         {/* Logo */}
-        <Link href="/demos/cyberpunk" className="text-2xl md:text-3xl font-black italic tracking-tighter">
+        <Link href="/portfolio-demos/cyberpunk" className="text-2xl md:text-3xl font-black italic tracking-tighter">
           CYBER<span className="text-cyan-400">PUNK</span>
           <span className="text-yellow-400 text-sm ml-1">_2099</span>
         </Link>
@@ -35,9 +35,9 @@ export default function CyberpunkLayout({ children }: { children: React.ReactNod
           </Link>
           
           {/* Updated Factions Link with Active State */}
-          <Link href="/demos/cyberpunk/factions" className="hover:text-cyan-400 transition-colors relative group">
+          <Link href="/portfolio-demos/cyberpunk/factions" className="hover:text-cyan-400 transition-colors relative group">
             Factions
-            <span className={`absolute -bottom-2 left-0 h-0.5 bg-cyan-400 transition-all ${pathname === '/demos/cyberpunk/factions' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            <span className={`absolute -bottom-2 left-0 h-0.5 bg-cyan-400 transition-all ${pathname === '/portfolio-demos/cyberpunk/factions' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
           </Link>
           
           <Link href="#" className="hover:text-pink-500 transition-colors relative group">
@@ -66,8 +66,8 @@ export default function CyberpunkLayout({ children }: { children: React.ReactNod
           
           {/* Updated Factions Mobile Link with Active State */}
           <Link 
-            href="/demos/cyberpunk/factions" 
-            className={`text-3xl font-black uppercase tracking-widest hover:text-cyan-400 transition-colors ${pathname === '/demos/cyberpunk/factions' ? 'text-cyan-400' : ''}`}
+            href="/portfolio-demos/cyberpunk/factions" 
+            className={`text-3xl font-black uppercase tracking-widest hover:text-cyan-400 transition-colors ${pathname === '/portfolio-demos/cyberpunk/factions' ? 'text-cyan-400' : ''}`}
           >
             Factions
           </Link>
