@@ -16,7 +16,7 @@ export const projects: Project[] = [
     id: "1",
     title: "NovaTrade AI",
     category: "Web Dev",
-    image: "/portfolio/fintech.jpg", // Make sure this is a Landscape image
+    image: "/portfolio/fintech.png", // Make sure this is a Landscape image
     description: "High-frequency trading platform with real-time data.",
     techStack: ["Next.js", "Python", "WebSockets"],
     status: "In Development",
