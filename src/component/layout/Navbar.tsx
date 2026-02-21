@@ -1,12 +1,13 @@
+// src/components/Navbar.tsx (or wherever your Navbar is located)
 "use client";
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // <--- 1. Import this
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
-  const pathname = usePathname(); // <--- 2. Get current URL
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,7 +24,6 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // <--- 3. THE FIX: Hide this navbar if we are in the Creative Section
   if (pathname?.startsWith("/creative")) {
     return null;
   }
@@ -62,6 +62,10 @@ const Navbar: React.FC = () => {
           </Link>
           <Link href="/resources" className="hover:text-white transition">
             Resources
+          </Link>
+          {/* ---> NEW BLOG/INSIGHTS LINK <--- */}
+          <Link href="/blog" className="hover:text-white transition">
+            Insights
           </Link>
           <Link href="/portfolio" className="hover:text-white transition">
             Portfolio
@@ -116,6 +120,14 @@ const Navbar: React.FC = () => {
             onClick={() => setOpen(false)}
           >
             Resources
+          </Link>
+          {/* ---> NEW MOBILE BLOG/INSIGHTS LINK <--- */}
+          <Link
+            href="/blog"
+            className="block text-white text-lg"
+            onClick={() => setOpen(false)}
+          >
+            Insights
           </Link>
           <Link
             href="/portfolio"

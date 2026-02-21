@@ -8,7 +8,10 @@ export default function NavbarWrapper() {
   const pathname = usePathname();
 
   // Hide the engineering navbar on BOTH the creative site and the demo sites
-  if (pathname?.startsWith('/creative') || pathname?.startsWith('/portfolio-demos')) {
+  if (pathname?.startsWith('/creative') || 
+      pathname?.startsWith('/portfolio-demos') ||
+      pathname?.startsWith('/industries-demo')
+    ) {
     return null;
   }
 
