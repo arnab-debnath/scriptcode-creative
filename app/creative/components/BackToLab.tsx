@@ -6,7 +6,7 @@ import { ArrowLeft } from 'lucide-react';
 
 export default function BackToLab() {
   return (
-    <div className="fixed bottom-8 left-8 z-[100] group">
+    <div className="fixed bottom-48 left-8 z-[100] group">
       <Link href="/creative/work">
         <div className="flex items-center gap-3 bg-black/80 backdrop-blur-xl border border-white/20 p-2 pr-6 rounded-full shadow-2xl hover:border-purple-500/50 transition-all duration-300">
           

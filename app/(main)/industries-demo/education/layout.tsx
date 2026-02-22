@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { GraduationCap, Menu, X, Search, ShoppingCart, Globe } from 'lucide-react';
+import DemoFooterCredit from '@/src/DemoFooterCredit';
 
 export default function EducationLayout({ children }: { children: React.ReactNode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -91,6 +92,7 @@ export default function EducationLayout({ children }: { children: React.ReactNod
       <main className="pt-16">
           {children}
       </main>
+      <DemoFooterCredit brand="main"/>
     </div>
   );
 }

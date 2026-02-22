@@ -97,6 +97,10 @@ export default function CreativeNavbar() {
                     Concept Lab
                     <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
+                <Link href="/creative/insights" className="relative group hover:text-white transition-colors py-2">
+                    Blog
+                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </Link>
             </div>
 
             {/* 3. Desktop CTA */}

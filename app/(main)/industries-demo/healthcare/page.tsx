@@ -4,10 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Video, FileText, Activity, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import DemoFooterCredit from '@/src/DemoFooterCredit';
 
 export default function HealthcareLanding() {
   return (
-    <div className="pb-24 overflow-hidden pt-28 md:pt-32">
+    <div className=" overflow-hidden pt-28 md:pt-32">
       
       {/* 1. HERO SECTION */}
       <section className="px-6 max-w-7xl mx-auto mb-24">
@@ -138,7 +139,6 @@ export default function HealthcareLanding() {
             </Link>
          </div>
       </section>
-      
     </div>
   );
 }

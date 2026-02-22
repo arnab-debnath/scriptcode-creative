@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { HeartPulse, Menu, X, ShieldCheck } from 'lucide-react';
+import DemoFooterCredit from '@/src/DemoFooterCredit';
 
 export default function HealthcareLayout({ children }: { children: React.ReactNode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -85,6 +86,7 @@ export default function HealthcareLayout({ children }: { children: React.ReactNo
       <main>
           {children}
       </main>
+      <DemoFooterCredit brand="main"/>
     </div>
   );
 }

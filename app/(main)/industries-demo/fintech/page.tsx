@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Code, CreditCard, ShieldCheck, Terminal, Layers } from 'lucide-react';
+import DemoFooterCredit from '@/src/DemoFooterCredit';
 
 export default function NovaTradeLanding() {
   return (
@@ -133,7 +134,7 @@ export default function NovaTradeLanding() {
             </div>
         </div>
       </section>
-
+        
     </div>
   );
 }

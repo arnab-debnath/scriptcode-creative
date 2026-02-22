@@ -31,7 +31,7 @@ const ServiceHeroCard: React.FC<ServiceHeroCardProps> = ({ title, description, i
                 <div className="flex flex-col justify-center items-start">
                      {/* Floating Icon */}
                      <div className="mb-6 w-fit p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg">
-                        {Icon && <Icon size={32} className="text-cyan-400" />}
+                        {Icon && <Icon size={32} className="text-white group-hover:text-red-500" />}
                     </div>
 
                     <h3 className="w-full md:w-2/3 text-4xl md:text-6xl font-black text-white uppercase leading-[0.95] tracking-tighter mb-6 drop-shadow-lg">

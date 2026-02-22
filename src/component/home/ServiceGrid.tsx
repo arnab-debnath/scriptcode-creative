@@ -4,15 +4,14 @@ import { services } from "../../data/services";
 import ServiceCard from "./ServiceCard";
 import ServiceHeroCard from "./ServiceHeroCard";
 import ServicesIntro from "./ServicesIntro";
-import GrowthBanner from "./GrowthBanner"; // Import the new banner
+import GrowthBanner from "./GrowthBanner"; 
 
 const ServicesGrid: React.FC = () => {
     return (
-        <section className="max-full mx-auto">
+        <section className="max-w-full mx-auto">
             <ServicesIntro />
             <div className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {services.map((service, index) => {
-                    // Logic: First item is Hero
                     const isHero = index === 0;
 
                     return (
@@ -30,7 +29,6 @@ const ServicesGrid: React.FC = () => {
                 })}
             </div>
             
-            {/* ADDED: The Handoff Banner */}
             <GrowthBanner />
         </section>
     );

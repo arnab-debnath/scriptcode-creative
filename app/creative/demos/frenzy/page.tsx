@@ -8,6 +8,7 @@ import {
   Instagram, Twitter, Menu, X, Star, Clock
 } from 'lucide-react';
 import Link from 'next/link';
+import DemoFooterCredit from '@/src/DemoFooterCredit';
 
 export default function FrenzyDemo() {
   const [scrolled, setScrolled] = useState(false);
@@ -186,7 +187,6 @@ export default function FrenzyDemo() {
 
       <footer className="py-20 px-6 border-t border-white/5 text-center">
          <div className="text-4xl font-black italic tracking-tighter mb-8">FRENZY<span className="text-[#FF5F00]">.</span></div>
-         <p className="text-gray-500 text-xs font-bold uppercase tracking-[0.5em] mb-8">Crafted by ScriptCode Creative</p>
          <div className="flex justify-center gap-8">
             <Instagram size={24} className="hover:text-[#FF5F00] cursor-pointer transition-colors" />
             <Twitter size={24} className="hover:text-[#FF5F00] cursor-pointer transition-colors" />
@@ -204,6 +204,7 @@ export default function FrenzyDemo() {
           animation: marquee 20s linear infinite;
         }
       `}</style>
+      <DemoFooterCredit brand="creative"/>
     </div>
   );
 }

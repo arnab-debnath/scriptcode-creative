@@ -2,8 +2,8 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image'; // 1. Imported Next.js Image
 
-// Define the interface for props
 interface Tag {
     name: string;
     link: string;
@@ -26,12 +26,15 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ name, image, description, t
   return (
     <div className="group bg-[#0B1215] border border-gray-800 rounded-2xl p-2 md:p-4 flex flex-col items-start h-full hover:border-gray-600 transition duration-300">
       
-      {/* 1. IMAGE SECTION */}
-      <div className='w-full overflow-hidden rounded-xl mb-6'>
-        <img 
+      {/* 1. IMAGE SECTION: Upgraded to Next.js Image */}
+      {/* Added 'relative' to the wrapper so the 'fill' property works correctly */}
+      <div className='relative w-full h-52 overflow-hidden rounded-xl mb-6'>
+        <Image 
             src={image} 
             alt={name}
-            className="w-full h-52 object-cover transform group-hover:scale-105 transition duration-500"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transform group-hover:scale-105 transition duration-500"
         />
       </div>
 

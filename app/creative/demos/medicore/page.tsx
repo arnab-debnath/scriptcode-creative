@@ -9,9 +9,12 @@ import {
   Star, MessageCircle, CheckCircle2, 
 } from 'lucide-react';
 import Link from 'next/link';
+import DemoFooterCredit from '@/src/DemoFooterCredit';
+import { div } from 'framer-motion/client';
 
 export default function MediCoreDemo() {
   return (
+    <div>
     <div className="bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-700">
       
       {/* 1. TOP ANNOUNCEMENT BAR */}
@@ -163,17 +166,16 @@ export default function MediCoreDemo() {
       </section>
 
       {/* 6. FLOATING WHATSAPP BUTTON (Highly Functional) */}
-      <div className="fixed bottom-8 right-8 z-[100]">
+      <div className="fixed bottom-48 right-8 z-[100]">
         <Link href="https://wa.me/910000000000" className="flex items-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform">
             <Phone size={20} fill="currentColor" />
             <span className="font-bold">Book via WhatsApp</span>
         </Link>
       </div>
 
-      <footer className="py-20 border-t border-white/5 text-center text-gray-200 text-[10px] bg-blue-600 font-black uppercase tracking-[0.5em]">
-        © 2026 ScriptCode Creative • Health Care
-      </footer>
 
+    </div>
+     <DemoFooterCredit brand="creative"/>
     </div>
   );
 }

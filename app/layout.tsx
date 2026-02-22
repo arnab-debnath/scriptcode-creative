@@ -2,12 +2,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google"; 
 import "./globals.css";
-import NavbarWrapper from "../src/component/layout/NavbarWrapper"; // <-- UPDATED THIS
+import NavbarWrapper from "../src/component/layout/NavbarWrapper"; 
 import FooterWrapper from "../src/component/layout/FooterWrapper";
+// REMOVED the ScriptCodeBadge import from here!
 
 const inter = Inter({ subsets: ["latin"] });
 
-// --- UPDATED SEO METADATA ---
 export const metadata: Metadata = {
   title: {
     default: "ScriptCode Innovation | High-Performance Software Engineering",
@@ -25,11 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavbarWrapper /> {/* <-- UPDATED THIS */}
+        <NavbarWrapper /> 
         <main className="min-h-screen bg-[#060b10]">
             {children}
         </main>
         <FooterWrapper />
+        
       </body>
     </html>
   );

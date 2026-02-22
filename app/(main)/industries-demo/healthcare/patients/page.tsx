@@ -50,7 +50,7 @@ export default function PatientsPage() {
                 <span className="text-emerald-600 font-bold flex items-center gap-2 text-sm uppercase tracking-wide">Learn More <ArrowRight size={16} /></span>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow group cursor-pointer">
+            <div className="bg-white p-4 md:p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow group cursor-pointer">
                 <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Stethoscope size={28} />
                 </div>
@@ -59,7 +59,7 @@ export default function PatientsPage() {
                 <span className="text-blue-600 font-bold flex items-center gap-2 text-sm uppercase tracking-wide">Learn More <ArrowRight size={16} /></span>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow group cursor-pointer">
+            <div className="bg-white p-4 md:p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow group cursor-pointer">
                 <div className="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Brain size={28} />
                 </div>
@@ -71,7 +71,7 @@ export default function PatientsPage() {
       </section>
 
       {/* PATIENT APP FEATURES */}
-      <section className="bg-slate-900 rounded-[2.5rem] p-12 text-white overflow-hidden relative">
+      <section className="bg-slate-900 rounded-[2.5rem] py-8 px-4 md:p-12 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative z-10">Your health, entirely in your hands</h2>
         

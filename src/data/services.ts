@@ -21,7 +21,7 @@ export const services: Service[] = [
         title: "Custom Software Development",
         description: "Enterprise-grade architecture built with modern stacks (React, Node.js, Python). Specialized in solving complex business logic.",
         type: "engineering",
-        image: "/services/custom-sw.png",
+        image: "/services/services-card/custom-sw.webp",
         icon: Code2,
     },
     {
@@ -29,7 +29,7 @@ export const services: Service[] = [
         title: "Web Development",
         description: "High-performance, scalable web applications and progressive web apps (PWAs) engineered for speed and reliability.",
         type: "engineering",
-        image: "/services/web-dev.png",
+        image: "/services/services-card/web-dev.webp",
         icon: Globe,
     },
     {
@@ -37,7 +37,7 @@ export const services: Service[] = [
         title: "Mobile Development",
         description: "Native and cross-platform mobile applications for iOS and Android built for seamless performance.",
         type: "engineering",
-        image: "/services/wordpress.png",
+        image: "/services/services-card/mobile-dev.webp",
         icon: Smartphone,
     },
     {
@@ -45,7 +45,7 @@ export const services: Service[] = [
         title: "DevOps as a Service",
         description: "Automating deployment pipelines, cloud infrastructure management, and monitoring for 99.9% uptime.",
         type: "engineering",
-        image: "/services/wordpress.png",
+        image: "/services/services-card/dev-ops.webp",
         icon: Terminal,
     },
 
@@ -55,7 +55,7 @@ export const services: Service[] = [
         title: "UI/UX Design",
         description: "User-centric interface design and experience mapping to ensure your product is intuitive and engaging.",
         type: "engineering",
-        image: "/services/wordpress.png",
+        image: "/services/services-card/ui-ux.webp",
         icon: PenTool,
     },
     {
@@ -63,7 +63,7 @@ export const services: Service[] = [
         title: "Web Accessibility",
         description: "Ensuring your digital products are WCAG compliant and usable for everyone, regardless of ability.",
         type: "engineering",
-        image: "/services/wordpress.png",
+        image: "/services/services-card/web-access.webp",
         icon: Eye,
     },
 
@@ -73,7 +73,7 @@ export const services: Service[] = [
         title: "Quality Assurance",
         description: "Rigorous manual and automated testing to ensure your software is bug-free and production-ready.",
         type: "engineering",
-        image: "/services/branding.png",
+        image: "/services/services-card/quality-assurance.webp",
         icon: CheckCircle,
     },
     {
@@ -81,7 +81,7 @@ export const services: Service[] = [
         title: "Code Audit",
         description: "Deep-dive technical reviews of existing codebases to identify security risks and performance bottlenecks.",
         type: "engineering",
-        image: "/services/product-marketing.png",
+        image: "/services/services-card/code-audit2.webp",
         icon: ShieldCheck,
     },
     {
@@ -89,7 +89,7 @@ export const services: Service[] = [
         title: "IT Consulting",
         description: "Strategic guidance on technology adoption, digital transformation, and technical roadmap planning.",
         type: "consulting",
-        image: "/services/shopify.png",
+        image: "/services/services-card/it-consult.webp",
         icon: Briefcase,
     },
     {
@@ -97,7 +97,7 @@ export const services: Service[] = [
         title: "Business Analysis",
         description: "Bridging the gap between business goals and technical execution through detailed requirement gathering.",
         type: "consulting",
-        image: "/services/wordpress.png",
+        image: "/services/services-card/business-analysis.webp",
         icon: BarChart,
     },
 
